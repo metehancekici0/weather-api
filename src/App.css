@@ -1,13 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e2e2e2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #464646;
+}
+
+body,
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
+    background-color: #333;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.App {
+    margin-top: 100px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.search .choose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 12.5px;
+    border-radius: 6px;
+    width: 300px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .3s ease;
+}
+
+.search .choose .city-name {
+    font-size: 18px;
+    color: #000;
+}
+
+.search .choose svg {
+    color: #000;
+    font-size: 18px;
+    transition: transform .3s ease;
+}
+
+.search .choose.active svg {
+    transform: rotate(180deg);
+}
+
+.search .list {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 12.5px;
+    border-radius: 6px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.search .list .group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.search .list .group input {
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px 5px 5px 35px;
+    outline: none;
+    box-shadow: none;
+    height: 37.5px;
+}
+
+.search .list .group svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 17px;
+    height: 17px;
+    transform: translateY(-50%);
+    color: #727272;
+}
+
+.search .list .items {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    max-height: 195px;
+    overflow: auto;
+}
+
+.search .list .items li {
+    padding: 7px;
+    width: calc(100% - 5px);
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-size: 15px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.search .list .items li.checked {
+    background-color: #f4f4f4;
+    border: 1px solid lightgray;
+}
+
+.search .list .items li:hover {
+    background-color: #f4f4f4;
+    border: 1px solid lightgray;
+}
+
+.search .list .items li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.weather-card {
+    background-color: #4284ED;
+    border-radius: 6px;
+    width: 300px;
+    margin-top: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weather-card .main-icon {
+    width: 150px;
+    object-fit: contain;
+}
+
+.weather-card .temp {
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.weather-card .city-name {
+    font-size: 23px;
+    color: #fff;
+}
+
+.weather-card .sub-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    color: #fff;
+}
+
+.weather-card .sub-info .item {
+    display: flex;
+    align-items: center;
+}
+
+.weather-card .sub-info .item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.weather-card .sub-info .item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-card .sub-info .item div span {
+    font-size: 13px;
+    line-height: 100%;
+}
+
+.weather-card .sub-info .item div span:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+
+
+/* body {
     background-image: url('../public/img/bg.avif');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     background-position: center;
-}
+} */
