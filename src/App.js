@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import config from './config';
 
 import { FaChevronDown, FaMagnifyingGlass } from 'react-icons/fa6';
 
@@ -54,7 +55,7 @@ function App() {
 
     if (filteredCities)
       setCustomSelect({ ...customSelect, searchedWord: val, searchedCities: filteredCities })
-    
+
   }
 
   const handleClickCustomSelect = (city, isActive) => {
@@ -63,7 +64,7 @@ function App() {
   }
 
   const getWeatherData = (cityName) => {
-    const apiKey = "67545865b767f4ae30651175ba9005f8";
+    const apiKey = config.apiKey;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
     axios.get(apiUrl)
       .then(response => {
