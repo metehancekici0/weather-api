@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import config from './config';
 
 import { FaChevronDown, FaMagnifyingGlass } from 'react-icons/fa6';
 
@@ -64,7 +63,7 @@ function App() {
   }
 
   const getWeatherData = (cityName) => {
-    const apiKey = config.apiKey;
+    const apiKey = process.env.REACT_APP_API_KEY;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
     axios.get(apiUrl)
       .then(response => {
